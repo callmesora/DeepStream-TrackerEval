@@ -180,6 +180,20 @@ Since we swapped all the labels in the original folders we don’t need to provi
 python3 scripts/run_kitty.py
 ```
 
+## Anotate on custom data
+It is possile to evaluate the DeepStream tracker on custom data.
+To do so, first you need to convert the kitti-output data to a JSON format to load on VGG anotator
+https://www.robots.ox.ac.uk/~vgg/software/via/via_demo.html
+
+I recommend downloading it to your computer and managing the files locally
+```bash
+python3 file_formater_JSON_to_KITTI.py -file kitti_track -images frames/
+```
+Will generate the JSON file, Upload it on VGG anotator as an import. 
+Later export the anotations and use the notebook provided by 
+https://github.com/Tubaher/TrackEval
+
+To convert the JSON back to the kitti format. The rest of the procedure is the same.
 
 Bellow is the configurations used to extract the data
 ```bash
