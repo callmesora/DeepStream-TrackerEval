@@ -1,4 +1,10 @@
-# Kitti Video From Frames
+# DeepStream Tracker Eval on KITTI 
+This repository is a guide to evaluate DeepStream trackers on the popular KITTI dataset.
+It follows this methodology:
+
+![Untitled](images/track-evaluate.png)
+
+
 
 Created: June 3, 2022 2:30 PM
 
@@ -14,15 +20,15 @@ Download left camera images (15GB) and the labels (9MB)
 
 The labels will contain .txt Files for every Kitti Evaluation Sequence
 
-![Untitled](Kitti%20Video%20From%20Frames%20b78b88367397463b893e4bd7121e779e/Untitled.png)
+![Untitled](images/Untitled.png)
 
 The images will contain a similar folder structure for each sequence
 
-![Untitled](Kitti%20Video%20From%20Frames%20b78b88367397463b893e4bd7121e779e/Untitled%201.png)
+![Untitled](images/Untitled%201.png)
 
 Inside each of these sequence folders there are the image frames.
 
-![Untitled](Kitti%20Video%20From%20Frames%20b78b88367397463b893e4bd7121e779e/Untitled%202.png)
+![Untitled](images/Untitled%202.png)
 
 # Step Two - Generate Video Data for DeepStream
 
@@ -61,7 +67,7 @@ This resolution **needs to be the same** as the input video resolution. In the c
 
 After the config is done and the DeepStream app is run, the output folder will have a similar structure to this:
 
-![Untitled](Kitti%20Video%20From%20Frames%20b78b88367397463b893e4bd7121e779e/Untitled%203.png)
+![Untitled](images/Untitled%203.png)
 
 # Step 3 - Transform the Data to KITTI Evaluation Format
 
@@ -174,6 +180,8 @@ Since we swapped all the labels in the original folders we don’t need to provi
 python3 scripts/run_kitty.py
 ```
 
+
+Bellow is the configurations used to extract the data
 ```bash
 [application]
 enable-perf-measurement=1
